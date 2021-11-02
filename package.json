@@ -1,0 +1,14 @@
+{
+  "name": "poc-blockchain-notify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.0.0"
+  }
+}
