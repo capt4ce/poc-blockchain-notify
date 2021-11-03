@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
+    "moralis": "^0.0.118",
     "node-fetch": "^3.0.0"
   }
 }
