@@ -5,7 +5,27 @@ export class MoralisNotify {
     Moralis.start({ serverUrl, appId });
   }
 
-  async registerAddresses(addresses) {}
+  async registerAddresses(addresses) {
+    const registerFunctions = ['watchBscAddress', 'watchEthAddress'];
+    const promises = addresses.reduce((result, address) => {
+      registerFunctions.forEach((fn) => {
+        result.push(Moralis.Cloud.run(fn, { address }));
+      });
+      return result;
+    }, []);
+    return Promise.all(promises);
+  }
+
+  async unregisterAddresses(addresses) {
+    const registerFunctions = ['unwatchBscAddress', 'unwatchEthAddress'];
+    const promises = addresses.reduce((result, address) => {
+      registerFunctions.forEach((fn) => {
+        result.push(Moralis.Cloud.run(fn, { address }));
+      });
+      return result;
+    }, []);
+    return Promise.all(promises);
+  }
 
   /**
    * 

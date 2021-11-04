@@ -37,7 +37,10 @@ const moralisNotify = new MoralisNotify(
   process.env.MORALIS_SERVER_URL,
   process.env.MORALIS_APP_ID
 );
+moralisNotify
+  .registerAddresses(['0x275e400c6f8b1cee71060c2c5C1AbbE0b72bBB60'])
+  .then((result) => console.log(result));
 
-moralisNotify.listenToNewTransactions((data) => {
-  console.log(data, data.attributes);
-});
+// moralisNotify.listenToNewTransactions((data) => {
+//   console.log(data, data.attributes);
+// });
